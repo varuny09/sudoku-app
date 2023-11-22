@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:columnCount="9"
+    android:rowCount="9"
+    android:padding="8dp"
+    android:background="@color/background_color">
+
+    <!-- Define the 9x9 grid of TextViews for Sudoku cells -->
+    <!-- For simplicity, assuming empty cells are represented by a dash "-" -->
+    <TextView
+        android:id="@+id/cell_00"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:text="-"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textColor="@color/cell_text_color"
+        android:background="@drawable/cell_background"
+        android:clickable="true"
+        android:onClick="onCellClicked" />
+
+    <!-- Repeat TextViews for each cell in the Sudoku grid (up to cell_88) -->
+    <!-- (cell_01, cell_02, ... cell_88) -->
+
+</GridLayout>
