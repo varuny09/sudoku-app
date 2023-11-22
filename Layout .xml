@@ -1,0 +1,35 @@
+def generate_sudoku_xml():
+    xml_content = '''<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:columnCount="9"
+    android:rowCount="9"
+    android:padding="8dp"
+    android:background="@color/background_color">
+'''
+
+    for i in range(9):
+        for j in range(9):
+            xml_content += f'''\
+    <TextView
+        android:id="@+id/cell_{i}_{j}"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:text="-"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textColor="@color/cell_text_color"
+        android:background="@drawable/cell_background"
+        android:clickable="true"
+        android:onClick="onCellClicked" />
+'''
+
+    xml_content += "</GridLayout>"
+    return xml_content
+
+# Save generated XML content to a file
+with open('sudoku_grid.xml', 'w') as file:
+    file.write(generate_sudoku_xml())
